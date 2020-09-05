@@ -16,8 +16,8 @@ namespace HelloMyNameIs
         public string Scp173Name { get; set; } = "Peanut";
         public string Scp106Name { get; set; } = "Larry";
         public string Scp049Name { get; set; } = "Doctor";
-        [Description("{oldname} is replaced with the nickname they used to have, or a random one if they didn't have one.")]
-        public string Scp0492Name { get; set; } = "Zombie {oldname}";
+        [Description("{name} is replaced with a random name.")]
+        public string Scp0492Name { get; set; } = "Zombie {name}";
         public string Scp079Name { get; set; } = "Computer";
         public string Scp096Name { get; set; } = "Shyguy";
         public string Scp939_89Name { get; set; } = "Dog 1";

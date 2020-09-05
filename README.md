@@ -11,7 +11,7 @@ You can always find the latest stable dll [here](https://github.com/steven454746
 - Scp173Name ("Peanut")
 - Scp106Name ("Larry")
 - Scp049Name ("Doctor")
-- Scp0492Name ("Zombie \{oldname}") - "\{oldname}" is replaced with their previous nickname, or a random one if they didn't have one.
+- Scp0492Name ("Zombie \{name}") - "\{name}" is replaced with a random name.
 - Scp079Name ("Computer")
 - Scp096Name ("Shyguy")
 - Scp939_89Name ("Dog 1")

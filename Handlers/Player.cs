@@ -30,7 +30,8 @@ namespace HelloMyNameIs.Handlers
         {
             if (ev.RoleType.GetTeam() == Team.SCP)
             {
-                if (!scps.ContainsKey(ev.Player.Id)) scps.Add(ev.Player.Id, ev.Player.DisplayNickname);
+                bool wasSCP = scps.ContainsKey(ev.Player.Id);
+                if (!wasSCP) scps.Add(ev.Player.Id, ev.Player.DisplayNickname);
                 string name = "";
                 switch (ev.RoleType)
                 {
@@ -47,7 +48,7 @@ namespace HelloMyNameIs.Handlers
                         break;
 
                     case RoleType.Scp0492:
-                        name = Plugin.Instance.Config.Scp0492Name.Replace("{oldname}", ev.Player.DisplayNickname != null || ev.Player.DisplayNickname == "" ? ev.Player.DisplayNickname : GetRandomName());
+                        name = Plugin.Instance.Config.Scp0492Name.Replace("{name}", GetRandomName());
                         break;
 
                     case RoleType.Scp079:
@@ -120,9 +121,10 @@ namespace HelloMyNameIs.Handlers
         {
             if (ev.NewRole.GetTeam() == Team.SCP)
             {
-                if (!scps.ContainsKey(ev.Player.Id)) scps.Add(ev.Player.Id, ev.Player.DisplayNickname);
+                bool wasSCP = scps.ContainsKey(ev.Player.Id);
+                if (!wasSCP) scps.Add(ev.Player.Id, ev.Player.DisplayNickname);
                 string name = "";
-                switch(ev.NewRole)
+                switch (ev.NewRole)
                 {
                     case RoleType.Scp173:
                         name = Plugin.Instance.Config.Scp173Name;
@@ -137,7 +139,7 @@ namespace HelloMyNameIs.Handlers
                         break;
 
                     case RoleType.Scp0492:
-                        name = Plugin.Instance.Config.Scp0492Name.Replace("{oldname}", ev.Player.DisplayNickname != null || ev.Player.DisplayNickname == "" ? ev.Player.DisplayNickname : GetRandomName());
+                        name = Plugin.Instance.Config.Scp0492Name.Replace("{name}", GetRandomName());
                         break;
 
                     case RoleType.Scp079:
@@ -156,7 +158,7 @@ namespace HelloMyNameIs.Handlers
                         name = Plugin.Instance.Config.Scp939_53Name;
                         break;
                 }
-              
+
                 ev.Player.DisplayNickname = name;
             }
             else if (scps.ContainsKey(ev.Player.Id) && ev.NewRole != RoleType.Spectator && ev.NewRole != RoleType.Tutorial)
