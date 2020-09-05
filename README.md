@@ -1,5 +1,7 @@
 Very simple plugin for randomizing display names of players on your server. You can also customize the names list and the names of SCPs.
 
+You can always find the latest stable dll [here](https://github.com/steven4547466/HelloMyNameIs/releases/latest). This plugin requires EXILED, which you can find [here](https://github.com/galaxy119/EXILED).
+
 ## Config options
 
 - Names - List of names that players can get, default not shown because of how many there are.
